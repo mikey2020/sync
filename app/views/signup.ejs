@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to  <%= title %>  Sign Up Page </p>
+    <form method="post" action="/signup">
+    	<input type = "text" placeholder="firstname" name = "firstname" >
+    	<br>
+    	<input type = "text" placeholder="lastname" name = "lastname">
+    	<br>
+    	<input type="text" placeholder = "username" name="username">
+    	<br>
+    	<input type="email" placeholder = "email" name="email">
+    	<br>
+    	<input type="password" placeholder = "password" name="password">
+    	<input type="submit" name="sign up">
+    </form>
+  </body>
+</html>

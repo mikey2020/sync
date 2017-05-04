@@ -5,9 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('./config/mongoose');
 
+var db = mongoose();
 //var users = require('./routes/users');
-
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var app = express();
 
 // view engine setup
@@ -25,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/users', users);
 require('./app/routes/index')(app);
+require('./app/routes/users')(app);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
