@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <% for(var x in messages) {%>
+    <p><%= messages[x] %></p>
+  <% } %>
+    <h1><%= title %></h1>
+    <p>Welcome to  <%= title %>  Log In Page </p>
+    <form method="post" action="/login">
+    	<input type="text" placeholder = "username" name="username">
+    	<br>
+    	<input type="password" placeholder = "password" name="password">
+        <br>
+    	<input type="submit" name="sign up">
+    </form>
+  </body>
+</html>

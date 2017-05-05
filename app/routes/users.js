@@ -1,6 +1,8 @@
 var express = require('express');
-//var router = express.Router();
+var passport = require('passport');
 var user = require('../controllers/userController');
+
+require('../../config/strategies/local');
 module.exports = function(app){
 	
 	app.get('/signup', function(req, res, next) {
@@ -8,6 +10,16 @@ module.exports = function(app){
 	});
 
 	app.post('/signup',user.createUser);
+
+	app.get('/login', user.renderLogin);
+
+	app.post('/login', 
+		passport.authenticate('local',{ successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true })
+	);
+
+	app.get('/logout',user.logout);
 };
 
 

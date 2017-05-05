@@ -1,3 +1,4 @@
 module.exports = {
-	db: "mongodb://localhost/sync"
+	db: "mongodb://localhost/sync",
+	config: "flashIsSavitar"
 };
