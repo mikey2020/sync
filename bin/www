@@ -90,4 +90,5 @@ function onListening() {
   debug('Listening on ' + bind);
 
   console.log("listening on port " + port);
+  console.log(process.env.NODE_ENV);
 }

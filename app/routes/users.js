@@ -6,7 +6,9 @@ require('../../config/strategies/local');
 module.exports = function(app){
 	
 	app.get('/signup', function(req, res, next) {
-  		res.render('signup',{})
+  		res.render('signup',{
+  			messages: req.flash('error')
+  		})
 	});
 
 	app.post('/signup',user.createUser);

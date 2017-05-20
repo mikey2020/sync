@@ -5,8 +5,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <p><a href="/login">login here </a></p>
     <h1><%= title %></h1>
     <p>Welcome to  <%= title %>  Sign Up Page </p>
+    <% for (var x in messages) { %>
+        <p><%=messages[x]%></p>
+    <% } %>
     <form method="post" action="/signup">
     	<input type = "text" placeholder="firstname" name = "firstname" >
     	<br>

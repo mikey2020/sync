@@ -15,7 +15,9 @@ var UserSchema = new Schema({
 	},
 	email: {
 		type: String,
-		match: [/.+\@.+\..+/ , "please enter valid email address"]
+		match: [/.+\@.+\..+/ , "please enter valid email address"],
+		unique: true,
+		required: true
 	},
 	password: {
 		type: String,
@@ -67,4 +69,4 @@ UserSchema.post('save' , function(next){
 mongoose.model('User',UserSchema);
 
 
-UserSchema.set('toJSON', { getters: true, virtuals: true });
+UserSchema.set('toJSON', { getters: true, virtuals: true });  
